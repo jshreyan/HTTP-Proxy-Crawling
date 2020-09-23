@@ -11,6 +11,7 @@ URL = "https://www.google.com"
 
 
 def send_request(url):
+    print('url:',url)
     bad_proxies,proxies = [],None
     retry,retry_cnt,response_status = True,0,0
     #time.sleep(1)
@@ -25,7 +26,7 @@ def send_request(url):
             retry = True
             bad_proxies.append(proxies)
 
-        print('response_status:',response_status)
+        print('response_status:',response_status,' retry_cnt:',retry_cnt)
             
         if response_status == 200:
             retry = False
